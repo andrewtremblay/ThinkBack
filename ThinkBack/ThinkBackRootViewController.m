@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 DanDrew. All rights reserved.
 //
 
-#import "ThinkBackViewController.h"
+#import "ThinkBackRootViewController.h"
 
-@interface ThinkBackViewController ()
+@interface ThinkBackRootViewController ()
 
 @end
 
-@implementation ThinkBackViewController
+@implementation ThinkBackRootViewController
 
 - (void)viewDidLoad
 {

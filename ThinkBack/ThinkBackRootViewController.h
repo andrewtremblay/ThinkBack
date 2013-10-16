@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThinkBackViewController : UIViewController
+@interface ThinkBackRootViewController : UIViewController
 
 @end

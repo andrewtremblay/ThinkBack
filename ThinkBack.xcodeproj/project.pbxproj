@@ -15,7 +15,7 @@
 		310CBB0E17EFFB2300F8A534 /* ThinkBackAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 310CBB0D17EFFB2300F8A534 /* ThinkBackAppDelegate.m */; };
 		310CBB1117EFFB2300F8A534 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310CBB0F17EFFB2300F8A534 /* Main_iPhone.storyboard */; };
 		310CBB1417EFFB2300F8A534 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310CBB1217EFFB2300F8A534 /* Main_iPad.storyboard */; };
-		310CBB1717EFFB2300F8A534 /* ThinkBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 310CBB1617EFFB2300F8A534 /* ThinkBackViewController.m */; };
+		310CBB1717EFFB2300F8A534 /* ThinkBackRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 310CBB1617EFFB2300F8A534 /* ThinkBackRootViewController.m */; };
 		310CBB1917EFFB2300F8A534 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 310CBB1817EFFB2300F8A534 /* Images.xcassets */; };
 		310CBB2017EFFB2400F8A534 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310CBB1F17EFFB2400F8A534 /* XCTest.framework */; };
 		310CBB2117EFFB2400F8A534 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310CBAFD17EFFB2300F8A534 /* Foundation.framework */; };
@@ -23,10 +23,8 @@
 		310CBB2A17EFFB2400F8A534 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 310CBB2817EFFB2400F8A534 /* InfoPlist.strings */; };
 		310CBB2C17EFFB2400F8A534 /* ThinkBackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 310CBB2B17EFFB2400F8A534 /* ThinkBackTests.m */; };
 		31F72C34180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F72C32180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.m */; };
-		31F72C35180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F72C33180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.xib */; };
 		31F72C38180F467B00ADFD61 /* NewIdeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F72C37180F467B00ADFD61 /* NewIdeaViewController.m */; };
 		31FC076E180F2A0C00274A5C /* ThinkBackSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FC076C180F2A0C00274A5C /* ThinkBackSettingsViewController.m */; };
-		31FC076F180F2A0C00274A5C /* ThinkBackSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FC076D180F2A0C00274A5C /* ThinkBackSettingsViewController.xib */; };
 		31FC0771180F2A9700274A5C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FC0770180F2A9700274A5C /* AddressBook.framework */; };
 		31FC0773180F2ABF00274A5C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FC0772180F2ABF00274A5C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -54,8 +52,8 @@
 		310CBB0D17EFFB2300F8A534 /* ThinkBackAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkBackAppDelegate.m; sourceTree = "<group>"; };
 		310CBB1017EFFB2300F8A534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		310CBB1317EFFB2300F8A534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		310CBB1517EFFB2300F8A534 /* ThinkBackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkBackViewController.h; sourceTree = "<group>"; };
-		310CBB1617EFFB2300F8A534 /* ThinkBackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkBackViewController.m; sourceTree = "<group>"; };
+		310CBB1517EFFB2300F8A534 /* ThinkBackRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkBackRootViewController.h; sourceTree = "<group>"; };
+		310CBB1617EFFB2300F8A534 /* ThinkBackRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkBackRootViewController.m; sourceTree = "<group>"; };
 		310CBB1817EFFB2300F8A534 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		310CBB1E17EFFB2400F8A534 /* ThinkBackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThinkBackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		310CBB1F17EFFB2400F8A534 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -64,12 +62,10 @@
 		310CBB2B17EFFB2400F8A534 /* ThinkBackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkBackTests.m; sourceTree = "<group>"; };
 		31F72C31180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkBackAllIdeasTableViewController.h; sourceTree = "<group>"; };
 		31F72C32180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkBackAllIdeasTableViewController.m; sourceTree = "<group>"; };
-		31F72C33180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThinkBackAllIdeasTableViewController.xib; sourceTree = "<group>"; };
-		31F72C36180F467B00ADFD61 /* NewIdeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewIdeaViewController.h; path = ThinkBack/NewIdeaViewController.h; sourceTree = "<group>"; };
-		31F72C37180F467B00ADFD61 /* NewIdeaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewIdeaViewController.m; path = ThinkBack/NewIdeaViewController.m; sourceTree = "<group>"; };
+		31F72C36180F467B00ADFD61 /* NewIdeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewIdeaViewController.h; sourceTree = "<group>"; };
+		31F72C37180F467B00ADFD61 /* NewIdeaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewIdeaViewController.m; sourceTree = "<group>"; };
 		31FC076B180F2A0C00274A5C /* ThinkBackSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkBackSettingsViewController.h; sourceTree = "<group>"; };
 		31FC076C180F2A0C00274A5C /* ThinkBackSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkBackSettingsViewController.m; sourceTree = "<group>"; };
-		31FC076D180F2A0C00274A5C /* ThinkBackSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThinkBackSettingsViewController.xib; sourceTree = "<group>"; };
 		31FC0770180F2A9700274A5C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		31FC0772180F2ABF00274A5C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -103,8 +99,6 @@
 		310CBAF117EFFB2300F8A534 = {
 			isa = PBXGroup;
 			children = (
-				31F72C36180F467B00ADFD61 /* NewIdeaViewController.h */,
-				31F72C37180F467B00ADFD61 /* NewIdeaViewController.m */,
 				310CBB0317EFFB2300F8A534 /* ThinkBack */,
 				310CBB2517EFFB2400F8A534 /* ThinkBackTests */,
 				310CBAFC17EFFB2300F8A534 /* Frameworks */,
@@ -137,20 +131,20 @@
 		310CBB0317EFFB2300F8A534 /* ThinkBack */ = {
 			isa = PBXGroup;
 			children = (
-				31F72C31180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.h */,
-				31F72C32180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.m */,
-				31F72C33180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.xib */,
 				310CBB0C17EFFB2300F8A534 /* ThinkBackAppDelegate.h */,
 				310CBB0D17EFFB2300F8A534 /* ThinkBackAppDelegate.m */,
+				310CBB1517EFFB2300F8A534 /* ThinkBackRootViewController.h */,
+				310CBB1617EFFB2300F8A534 /* ThinkBackRootViewController.m */,
+				31F72C36180F467B00ADFD61 /* NewIdeaViewController.h */,
+				31F72C37180F467B00ADFD61 /* NewIdeaViewController.m */,
+				31F72C31180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.h */,
+				31F72C32180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.m */,
 				310CBB0F17EFFB2300F8A534 /* Main_iPhone.storyboard */,
 				310CBB1217EFFB2300F8A534 /* Main_iPad.storyboard */,
-				310CBB1517EFFB2300F8A534 /* ThinkBackViewController.h */,
-				310CBB1617EFFB2300F8A534 /* ThinkBackViewController.m */,
 				310CBB1817EFFB2300F8A534 /* Images.xcassets */,
 				310CBB0417EFFB2300F8A534 /* Supporting Files */,
 				31FC076B180F2A0C00274A5C /* ThinkBackSettingsViewController.h */,
 				31FC076C180F2A0C00274A5C /* ThinkBackSettingsViewController.m */,
-				31FC076D180F2A0C00274A5C /* ThinkBackSettingsViewController.xib */,
 			);
 			path = ThinkBack;
 			sourceTree = "<group>";
@@ -264,10 +258,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31F72C35180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.xib in Resources */,
 				310CBB1417EFFB2300F8A534 /* Main_iPad.storyboard in Resources */,
 				310CBB1917EFFB2300F8A534 /* Images.xcassets in Resources */,
-				31FC076F180F2A0C00274A5C /* ThinkBackSettingsViewController.xib in Resources */,
 				310CBB1117EFFB2300F8A534 /* Main_iPhone.storyboard in Resources */,
 				310CBB0817EFFB2300F8A534 /* InfoPlist.strings in Resources */,
 			);
@@ -288,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				310CBB1717EFFB2300F8A534 /* ThinkBackViewController.m in Sources */,
+				310CBB1717EFFB2300F8A534 /* ThinkBackRootViewController.m in Sources */,
 				31F72C34180F460C00ADFD61 /* ThinkBackAllIdeasTableViewController.m in Sources */,
 				31F72C38180F467B00ADFD61 /* NewIdeaViewController.m in Sources */,
 				31FC076E180F2A0C00274A5C /* ThinkBackSettingsViewController.m in Sources */,
