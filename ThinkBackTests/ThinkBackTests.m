@@ -3,7 +3,7 @@
 //  ThinkBackTests
 //
 //  Created by AndrewTremblay on 9/23/13.
-//  Copyright (c) 2013 DanDrew. All rights reserved.
+//  Copyright (c) 2013 ThinkBack. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
