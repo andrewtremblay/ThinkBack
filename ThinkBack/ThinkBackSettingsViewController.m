@@ -35,4 +35,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+//Nav
+- (IBAction)backButtonPressed:(id)sender {
+    [[self navigationController] popToRootViewControllerAnimated:TRUE];
+}
+
 @end

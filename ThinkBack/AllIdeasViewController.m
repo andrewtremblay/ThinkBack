@@ -6,30 +6,30 @@
 //  Copyright (c) 2013 DanDrew. All rights reserved.
 //
 
-#import "ThinkBackAllIdeasTableViewController.h"
+#import "AllIdeasViewController.h"
 
-@interface ThinkBackAllIdeasTableViewController ()
+@interface AllIdeasViewController ()
 
 @end
 
-@implementation ThinkBackAllIdeasTableViewController
+@implementation AllIdeasViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -125,5 +125,11 @@
 }
  
  */
+
+
+//Nav
+- (IBAction)backButtonPressed:(id)sender {
+    [[self navigationController] popToRootViewControllerAnimated:TRUE];
+}
 
 @end

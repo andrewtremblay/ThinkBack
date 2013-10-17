@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThinkBackAllIdeasTableViewController : UITableViewController
+@interface AllIdeasViewController : UIViewController
 
 @end

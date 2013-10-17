@@ -35,4 +35,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Nav
+- (IBAction)backButtonPressed:(id)sender {
+    if([self presentingViewController] != nil){
+        [[self presentingViewController] dismissViewControllerAnimated:YES
+                                                            completion:^(void){}];
+    }else{
+        [[self navigationController] popToRootViewControllerAnimated:TRUE];
+    }
+}
+
 @end
