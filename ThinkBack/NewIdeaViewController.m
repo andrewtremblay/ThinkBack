@@ -2,7 +2,7 @@
 //  NewIdeaViewController.m
 //  ThinkBack
 //
-//  Created by AndrewTremblay on 10/16/13.
+//  Created by Andrew Tremblay on 10/16/13.
 //  Copyright (c) 2013 ThinkBack. All rights reserved.
 //
 
