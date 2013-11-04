@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThinkBackAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ThinkBackAppDelegate : UIResponder <UIApplicationDelegate, >
 
 @property (strong, nonatomic) UIWindow *window;
 
