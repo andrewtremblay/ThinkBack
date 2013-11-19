@@ -24,6 +24,7 @@
 		310CBB2C17EFFB2400F8A534 /* ThinkBackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 310CBB2B17EFFB2400F8A534 /* ThinkBackTests.m */; };
 		319303E31827AAE2000B5B5D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319303E21827AAE2000B5B5D /* CoreData.framework */; };
 		319303E918283CF4000B5B5D /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 319303E818283CF4000B5B5D /* CoreDataHelper.m */; };
+		319304391828AD79000B5B5D /* ThinkBackIdeaDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 319304381828AD79000B5B5D /* ThinkBackIdeaDataObject.m */; };
 		31C776F9181AE95A00F2C3E8 /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C776F8181AE95A00F2C3E8 /* page.png */; };
 		31C776FB181AEA5E00F2C3E8 /* page-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C776FA181AEA5E00F2C3E8 /* page-white.png */; };
 		31C776FD181AEB8800F2C3E8 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C776FC181AEB8800F2C3E8 /* gear.png */; };
@@ -68,6 +69,8 @@
 		319303E21827AAE2000B5B5D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		319303E718283CF4000B5B5D /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		319303E818283CF4000B5B5D /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		319304371828AD79000B5B5D /* ThinkBackIdeaDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkBackIdeaDataObject.h; sourceTree = "<group>"; };
+		319304381828AD79000B5B5D /* ThinkBackIdeaDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkBackIdeaDataObject.m; sourceTree = "<group>"; };
 		31C776F8181AE95A00F2C3E8 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		31C776FA181AEA5E00F2C3E8 /* page-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page-white.png"; sourceTree = "<group>"; };
 		31C776FC181AEB8800F2C3E8 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				310CBB1817EFFB2300F8A534 /* Images.xcassets */,
 				31C776FE181AED0700F2C3E8 /* Icons */,
 				310CBB0417EFFB2300F8A534 /* Supporting Files */,
+				319304371828AD79000B5B5D /* ThinkBackIdeaDataObject.h */,
+				319304381828AD79000B5B5D /* ThinkBackIdeaDataObject.m */,
 			);
 			path = ThinkBack;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				31C7770118205D6800F2C3E8 /* IdeaModel.xcdatamodeld in Sources */,
 				310CBB1717EFFB2300F8A534 /* ThinkBackRootViewController.m in Sources */,
 				31F72C34180F460C00ADFD61 /* AllIdeasViewController.m in Sources */,
+				319304391828AD79000B5B5D /* ThinkBackIdeaDataObject.m in Sources */,
 				31F72C38180F467B00ADFD61 /* NewIdeaViewController.m in Sources */,
 				31FC076E180F2A0C00274A5C /* ThinkBackSettingsViewController.m in Sources */,
 				310CBB0E17EFFB2300F8A534 /* ThinkBackAppDelegate.m in Sources */,

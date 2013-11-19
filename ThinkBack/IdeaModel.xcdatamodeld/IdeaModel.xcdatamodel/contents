@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="IdeaGroup" syncable="YES">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="IdeaGroup">
         <attribute name="color" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IdeaLogEntity" inverseName="ideaGroups" inverseEntity="IdeaLogEntity" syncable="YES"/>
+        <userInfo/>
     </entity>
-    <entity name="IdeaLogEntity" syncable="YES">
+    <entity name="IdeaLogEntity">
         <attribute name="createdAt" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="remindAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="remindType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="ideaGroups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IdeaGroup" inverseName="ideas" inverseEntity="IdeaGroup" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="createdAt"/>
+            </compoundIndex>
+        </compoundIndexes>
+        <userInfo/>
     </entity>
     <elements>
-        <element name="IdeaLogEntity" positionX="180" positionY="152" width="162" height="28"/>
-        <element name="IdeaGroup" positionX="-56" positionY="162" width="128" height="28"/>
+        <element name="IdeaGroup" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="IdeaLogEntity" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
