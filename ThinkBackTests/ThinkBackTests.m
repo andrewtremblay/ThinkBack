@@ -19,7 +19,6 @@
 {
     [super setUp];
     //I have no ideas
-    NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];
 }
 
 - (void)tearDown
