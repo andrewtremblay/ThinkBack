@@ -24,11 +24,14 @@
 		319303E31827AAE2000B5B5D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319303E21827AAE2000B5B5D /* CoreData.framework */; };
 		319303E918283CF4000B5B5D /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 319303E818283CF4000B5B5D /* CoreDataHelper.m */; };
 		319304391828AD79000B5B5D /* ThinkBackIdeaDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 319304381828AD79000B5B5D /* ThinkBackIdeaDataObject.m */; };
-		31C776F9181AE95A00F2C3E8 /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C776F8181AE95A00F2C3E8 /* page.png */; };
+		31930B341858515F00F66453 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 31930B331858515F00F66453 /* libsqlite3.dylib */; };
+		3199E6DA1860DE5C0097C1E7 /* pages.png in Resources */ = {isa = PBXBuildFile; fileRef = 3199E6D91860DE5C0097C1E7 /* pages.png */; };
+		31C776F9181AE95A00F2C3E8 /* pages-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C776F8181AE95A00F2C3E8 /* pages-white.png */; };
 		31C776FB181AEA5E00F2C3E8 /* page-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C776FA181AEA5E00F2C3E8 /* page-white.png */; };
 		31C776FD181AEB8800F2C3E8 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C776FC181AEB8800F2C3E8 /* gear.png */; };
 		31C7770118205D6800F2C3E8 /* IdeaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C776FF18205D6800F2C3E8 /* IdeaModel.xcdatamodeld */; };
 		31C7770318224F1300F2C3E8 /* Icon-ThinkBack-Rough.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C7770218224F1300F2C3E8 /* Icon-ThinkBack-Rough.png */; };
+		31D924F3184A9CB200012197 /* ThinkBackDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D924F2184A9CB200012197 /* ThinkBackDataManager.m */; };
 		31F72C34180F460C00ADFD61 /* AllIdeasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F72C32180F460C00ADFD61 /* AllIdeasViewController.m */; };
 		31F72C38180F467B00ADFD61 /* NewIdeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F72C37180F467B00ADFD61 /* NewIdeaViewController.m */; };
 		31FC076E180F2A0C00274A5C /* ThinkBackSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FC076C180F2A0C00274A5C /* ThinkBackSettingsViewController.m */; };
@@ -69,11 +72,16 @@
 		319303E818283CF4000B5B5D /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		319304371828AD79000B5B5D /* ThinkBackIdeaDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkBackIdeaDataObject.h; sourceTree = "<group>"; };
 		319304381828AD79000B5B5D /* ThinkBackIdeaDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkBackIdeaDataObject.m; sourceTree = "<group>"; };
-		31C776F8181AE95A00F2C3E8 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
+		31930B331858515F00F66453 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		3199E6D91860DE5C0097C1E7 /* pages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pages.png; sourceTree = "<group>"; };
+		31ACA3D618611D4D00E29422 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		31C776F8181AE95A00F2C3E8 /* pages-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pages-white.png"; sourceTree = "<group>"; };
 		31C776FA181AEA5E00F2C3E8 /* page-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page-white.png"; sourceTree = "<group>"; };
 		31C776FC181AEB8800F2C3E8 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		31C7770018205D6800F2C3E8 /* IdeaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IdeaModel.xcdatamodel; sourceTree = "<group>"; };
 		31C7770218224F1300F2C3E8 /* Icon-ThinkBack-Rough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-ThinkBack-Rough.png"; sourceTree = "<group>"; };
+		31D924F1184A9CB200012197 /* ThinkBackDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkBackDataManager.h; sourceTree = "<group>"; };
+		31D924F2184A9CB200012197 /* ThinkBackDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkBackDataManager.m; sourceTree = "<group>"; };
 		31F72C31180F460C00ADFD61 /* AllIdeasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllIdeasViewController.h; sourceTree = "<group>"; };
 		31F72C32180F460C00ADFD61 /* AllIdeasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllIdeasViewController.m; sourceTree = "<group>"; };
 		31F72C36180F467B00ADFD61 /* NewIdeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewIdeaViewController.h; sourceTree = "<group>"; };
@@ -89,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31930B341858515F00F66453 /* libsqlite3.dylib in Frameworks */,
 				319303E31827AAE2000B5B5D /* CoreData.framework in Frameworks */,
 				310CBB0017EFFB2300F8A534 /* CoreGraphics.framework in Frameworks */,
 				310CBB0217EFFB2300F8A534 /* UIKit.framework in Frameworks */,
@@ -131,6 +140,7 @@
 		310CBAFC17EFFB2300F8A534 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31930B331858515F00F66453 /* libsqlite3.dylib */,
 				319303E21827AAE2000B5B5D /* CoreData.framework */,
 				31FC0772180F2ABF00274A5C /* CoreLocation.framework */,
 				31FC0770180F2A9700274A5C /* AddressBook.framework */,
@@ -189,6 +199,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		310E8C34185A3FD8008FD326 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UserDefaults;
+			sourceTree = "<group>";
+		};
 		319303E418283C47000B5B5D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,8 +224,12 @@
 		319303E518283C58000B5B5D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				310E8C34185A3FD8008FD326 /* UserDefaults */,
+				31D924F4184A9CDA00012197 /* Data */,
 				319303E718283CF4000B5B5D /* CoreDataHelper.h */,
 				319303E818283CF4000B5B5D /* CoreDataHelper.m */,
+				31D924F1184A9CB200012197 /* ThinkBackDataManager.h */,
+				31D924F2184A9CB200012197 /* ThinkBackDataManager.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -216,12 +237,20 @@
 		31C776FE181AED0700F2C3E8 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				3199E6D91860DE5C0097C1E7 /* pages.png */,
 				31C7770218224F1300F2C3E8 /* Icon-ThinkBack-Rough.png */,
-				31C776F8181AE95A00F2C3E8 /* page.png */,
+				31C776F8181AE95A00F2C3E8 /* pages-white.png */,
 				31C776FA181AEA5E00F2C3E8 /* page-white.png */,
 				31C776FC181AEB8800F2C3E8 /* gear.png */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		31D924F4184A9CDA00012197 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,8 +335,9 @@
 			files = (
 				31C776FD181AEB8800F2C3E8 /* gear.png in Resources */,
 				31C7770318224F1300F2C3E8 /* Icon-ThinkBack-Rough.png in Resources */,
-				31C776F9181AE95A00F2C3E8 /* page.png in Resources */,
+				31C776F9181AE95A00F2C3E8 /* pages-white.png in Resources */,
 				310CBB1917EFFB2300F8A534 /* Images.xcassets in Resources */,
+				3199E6DA1860DE5C0097C1E7 /* pages.png in Resources */,
 				310CBB1117EFFB2300F8A534 /* Main_iPhone.storyboard in Resources */,
 				31C776FB181AEA5E00F2C3E8 /* page-white.png in Resources */,
 				310CBB0817EFFB2300F8A534 /* InfoPlist.strings in Resources */,
@@ -336,6 +366,7 @@
 				31F72C38180F467B00ADFD61 /* NewIdeaViewController.m in Sources */,
 				31FC076E180F2A0C00274A5C /* ThinkBackSettingsViewController.m in Sources */,
 				310CBB0E17EFFB2300F8A534 /* ThinkBackAppDelegate.m in Sources */,
+				31D924F3184A9CB200012197 /* ThinkBackDataManager.m in Sources */,
 				319303E918283CF4000B5B5D /* CoreDataHelper.m in Sources */,
 				310CBB0A17EFFB2300F8A534 /* main.m in Sources */,
 			);
@@ -372,6 +403,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				310CBB1017EFFB2300F8A534 /* Base */,
+				31ACA3D618611D4D00E29422 /* en */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
