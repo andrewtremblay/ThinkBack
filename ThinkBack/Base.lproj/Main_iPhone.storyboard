@@ -406,6 +406,15 @@
                                     <outlet property="delegate" destination="zCt-NU-eTg" id="J9U-S0-8nd"/>
                                 </connections>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3I-p4-vpv" userLabel="Base View">
+                                <rect key="frame" x="0.0" y="336" width="320" height="232"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="MoS-nD-8Bd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="232" id="Yvo-Xa-Jxq"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRJ-gc-GMq" userLabel="Reminder Options View">
                                 <rect key="frame" x="0.0" y="336" width="320" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -502,6 +511,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9tC-3v-h8G" firstAttribute="top" secondItem="ucP-a7-tJA" secondAttribute="top" constant="20" id="1aW-Yu-8Wd"/>
+                            <constraint firstAttribute="trailing" secondItem="v3I-p4-vpv" secondAttribute="trailing" id="8Za-fI-nCw"/>
                             <constraint firstItem="9tC-3v-h8G" firstAttribute="leading" secondItem="ucP-a7-tJA" secondAttribute="leading" id="B2g-Qi-C2Y"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W6N-7R-MH5" secondAttribute="trailing" constant="5" id="C4K-0q-XAU"/>
                             <constraint firstItem="EID-ju-Uhq" firstAttribute="top" secondItem="rRJ-gc-GMq" secondAttribute="bottom" id="Drl-VE-SHd"/>
@@ -516,9 +526,11 @@
                             <constraint firstAttribute="trailing" secondItem="odI-td-13U" secondAttribute="trailing" constant="12" id="VYM-96-EzY"/>
                             <constraint firstAttribute="trailing" secondItem="x4F-R8-SNJ" secondAttribute="trailing" id="YCC-yT-rkw"/>
                             <constraint firstItem="9tC-3v-h8G" firstAttribute="leading" secondItem="ucP-a7-tJA" secondAttribute="leading" id="ZI9-XG-v8g"/>
+                            <constraint firstItem="EID-ju-Uhq" firstAttribute="top" secondItem="v3I-p4-vpv" secondAttribute="bottom" id="bPA-cu-YFP"/>
                             <constraint firstItem="9tC-3v-h8G" firstAttribute="top" secondItem="ucP-a7-tJA" secondAttribute="top" constant="20" id="dfH-VF-3F6"/>
                             <constraint firstItem="W6N-7R-MH5" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ucP-a7-tJA" secondAttribute="leading" constant="5" id="ftW-98-ah0"/>
                             <constraint firstAttribute="trailing" secondItem="W6N-7R-MH5" secondAttribute="trailing" constant="5" id="sMt-Uq-uGS"/>
+                            <constraint firstItem="v3I-p4-vpv" firstAttribute="leading" secondItem="ucP-a7-tJA" secondAttribute="leading" id="tmI-3a-YDA"/>
                             <constraint firstItem="W6N-7R-MH5" firstAttribute="top" secondItem="x4F-R8-SNJ" secondAttribute="bottom" constant="-15" id="u7g-OC-FNU"/>
                             <constraint firstItem="rRJ-gc-GMq" firstAttribute="top" secondItem="W6N-7R-MH5" secondAttribute="bottom" id="wto-MT-YKp"/>
                             <constraint firstItem="x4F-R8-SNJ" firstAttribute="top" secondItem="ucP-a7-tJA" secondAttribute="top" constant="20" id="zuh-vg-11k"/>
@@ -527,8 +539,10 @@
                     <navigationItem key="navigationItem" id="WW2-Z4-OLP"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="baseView" destination="v3I-p4-vpv" id="tok-Ze-6Tf"/>
                         <outlet property="ideaRemindAtTextView" destination="odI-td-13U" id="W7R-2c-ow0"/>
                         <outlet property="ideaTextView" destination="W6N-7R-MH5" id="tjo-Jq-ZYb"/>
+                        <outlet property="remindAtWrapperView" destination="rRJ-gc-GMq" id="ohy-jq-4LU"/>
                         <outlet property="view" destination="ucP-a7-tJA" id="E6f-M5-VU2"/>
                     </connections>
                 </viewController>

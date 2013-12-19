@@ -9,6 +9,9 @@
 #import "NewIdeaViewController.h"
 #import "CoreDataHelper.h"
 
+NSString *kBackButtonMessage    = @"Something was entered.";
+NSString *kSetDateButtonMessage = @"Nothing was entered.";
+
 @interface NewIdeaViewController ()
 
 @end
@@ -30,6 +33,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.temporaryIdea = [CoreDataHelper createIdea];
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -58,14 +63,14 @@
 
 -(void)finishAndSave
 {
-    [self.temporaryIdea setText:self.ideaTextView.text];
-    //save the data and back out of the window
-    [CoreDataHelper saveIdea:self.temporaryIdea];
-    [self backButtonPressed:nil];
-}
+    if(self.temporaryIdea != nil){
+        [self.temporaryIdea setText:self.ideaTextView.text];
+//    [self.temporaryIdea setRemindAt:[NSDate date]];
+        //save the data and back out of the window
+        [CoreDataHelper saveIdea:self.temporaryIdea];
+    }
 
-//Nav
-- (IBAction)backButtonPressed:(id)sender {
+    //navigate away
     if([self presentingViewController] != nil){
         [[self presentingViewController] dismissViewControllerAnimated:YES
                                                             completion:^(void){}];
@@ -74,8 +79,53 @@
     }
 }
 
-- (IBAction)doneButtonPressed:(id)sender {
-    [self finishAndSave];
+//Nav
+- (IBAction)backButtonPressed:(id)sender {
+    if(self.ideaTextView.text.length > 0){
+        [self promptErrorModal:kBackButtonMessage withConfirmText:@"Discard Idea"];
+    }else{
+        [CoreDataHelper deleteIdea:self.temporaryIdea];
+        self.temporaryIdea = nil;
+        [self finishAndSave];
+    }
 }
+
+- (IBAction)doneButtonPressed:(id)sender {
+    if(self.ideaTextView.text == nil || self.ideaTextView.text.length == 0){
+        [self promptErrorModal:kSetDateButtonMessage withConfirmText:@"Set Date"];
+    }else{
+        [self finishAndSave];
+    }
+}
+
+-(void)promptErrorModal:(NSString *)alertMsg withConfirmText:confirmText {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Continue?"
+                                                    message:alertMsg
+                                                   delegate:self
+                                          cancelButtonTitle:@"Edit Idea"
+                                          otherButtonTitles:confirmText, nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 0){
+        [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
+    }else{
+        if([alertView.message isEqualToString:kBackButtonMessage]){
+            [CoreDataHelper deleteIdea:self.temporaryIdea];
+            self.temporaryIdea = nil;
+            [self finishAndSave];
+        }if ([alertView.message isEqualToString:kSetDateButtonMessage]) {
+            [self promptDateSelection];
+        }
+    }
+}
+
+-(void)promptDateSelection
+{
+    [self.ideaTextView resignFirstResponder];
+    
+}
+
 
 @end

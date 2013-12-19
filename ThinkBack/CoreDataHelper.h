@@ -31,6 +31,9 @@ static NSString* kIdeaLogEntityName = @"IdeaLogEntity";
 +(NSError *)saveIdea:(ThinkBackIdeaDataObject *)ideaToSave;
 +(NSError *)deleteIdea:(ThinkBackIdeaDataObject *)ideaToDelete; //takes an existing idea and atempts to remove it from the database. Returns true on successful deletion
 
++(BOOL)ideaObjectIsValid:(ThinkBackIdeaDataObject *)ideaToCheck
+;
+
 +(NSArray *)getAllIdeas;
 
 #pragma mark String Formatting

@@ -105,6 +105,12 @@
     return error;
 }
 
++(BOOL)ideaObjectIsValid:(ThinkBackIdeaDataObject *)ideaToCheck
+{
+    return [ideaToCheck text] != nil && [[ideaToCheck text] length] > 0;
+}
+
+
 
 
 #pragma mark String Formatting
