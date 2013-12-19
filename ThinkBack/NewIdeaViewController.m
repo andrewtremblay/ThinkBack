@@ -52,7 +52,7 @@
     [self.ideaTextView setText:self.temporaryIdea.text];
     
 //    NSString *formattedDateTime = [self.temporaryIdea formattedRemindAtTime];
-    NSString *formattedDateTime = [NSString stringWithFormat:@"@ %@",@"whenever"];
+    NSString *formattedDateTime = [NSString stringWithFormat:@"@ %@", [CoreDataHelper formattedRemindAtTimeForIdea:self.temporaryIdea]];
     [self.ideaRemindAtTextView setText:formattedDateTime];
 }
 
