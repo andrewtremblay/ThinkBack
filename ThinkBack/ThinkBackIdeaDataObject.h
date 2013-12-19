@@ -9,5 +9,6 @@
 #import <CoreData/CoreData.h>
 
 @interface ThinkBackIdeaDataObject : NSManagedObject
-
+    @property (nonatomic, strong) NSString *text;
+    @property (nonatomic, strong) NSDate *remindAt;
 @end

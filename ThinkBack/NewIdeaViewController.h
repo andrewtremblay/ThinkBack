@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ThinkBackIdeaDataObject.h"
 
 @interface NewIdeaViewController : UIViewController
+- (IBAction)doneButtonPressed:(id)sender;
+- (IBAction)backButtonPressed:(id)sender;
+    @property (weak, nonatomic) IBOutlet UITextView *ideaTextView;
+    @property (weak, nonatomic) IBOutlet UILabel *ideaRemindAtTextView;
 
+    @property (nonatomic, strong) ThinkBackIdeaDataObject *temporaryIdea;
 @end

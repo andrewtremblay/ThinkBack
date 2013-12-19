@@ -12,6 +12,7 @@
 #import "ThinkBackIdeaDataObject.h"
 
 NSManagedObjectContext *testingContext;
+static NSString* kIdeaLogEntityName = @"IdeaLogEntity";
 
 @interface CoreDataHelper : NSObject
 
@@ -22,11 +23,18 @@ NSManagedObjectContext *testingContext;
  */
 +(void)prepareDataModelForTesting;
 
++(void)populateDebugDataModel;
+
+
 #pragma mark - primary Idea behavior (common CRUD)
 +(ThinkBackIdeaDataObject *)createIdea; //creates a new predicate with default values and adds it to the database. Returns a reference to that managed object.
-+(ThinkBackIdeaDataObject *)getIdea; //Gets the first idea object that the default predicate returns. null otherwise.
-+(ThinkBackIdeaDataObject *)getFirstIdeaFromPredicate:(NSPredicate *)predicate; //the gets te first idea that the predicate object comes back with. Null otherwise.
-+(ThinkBackIdeaDataObject *)updateIdea:(ThinkBackIdeaDataObject *)idea; //updates existing idea in database with pased object
-+(BOOL)deleteIdea:(ThinkBackIdeaDataObject *)ideaToDelete; //takes an existing idea and atempts to remove it from the database. Returns true on successful deletion
++(NSError *)saveIdea:(ThinkBackIdeaDataObject *)ideaToSave;
++(NSError *)deleteIdea:(ThinkBackIdeaDataObject *)ideaToDelete; //takes an existing idea and atempts to remove it from the database. Returns true on successful deletion
+
++(NSArray *)getAllIdeas;
+
+#pragma mark String Formatting
++(NSString *) formattedRemindAtTimeForIdea:(ThinkBackIdeaDataObject *)object;
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ThinkBackAppDelegate.h"
+#import "CoreDataHelper.h"
 
 @implementation ThinkBackAppDelegate
 
@@ -18,6 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [CoreDataHelper getManagedObjectContext];
+    [CoreDataHelper populateDebugDataModel];
+    
     return YES;
 }
 							

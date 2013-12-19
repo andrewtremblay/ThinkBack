@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AllIdeasViewController : UIViewController
+@interface AllIdeasViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@property NSArray *allIdeas;
 
 @end

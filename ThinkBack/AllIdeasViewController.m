@@ -7,6 +7,8 @@
 //
 
 #import "AllIdeasViewController.h"
+#import "CoreDataHelper.h"
+#import "IdeaTableViewCell.h"
 
 @interface AllIdeasViewController ()
 
@@ -27,12 +29,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.allIdeas = [CoreDataHelper getAllIdeas];
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -44,27 +48,33 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    // Return the number of sections. (split by date or maybe other types)
+    return 1;
+}
+
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.0f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.allIdeas count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"IdeaCell";
+    IdeaTableViewCell *cell = (IdeaTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[IdeaTableViewCell alloc] init];
     }
-    
-    // Configure the cell...
+    ThinkBackIdeaDataObject *obj = (ThinkBackIdeaDataObject *)[self.allIdeas objectAtIndex:indexPath.row];
+    cell.ideaText.text = [obj text];
+    cell.ideaRemindMe.text = [NSString stringWithFormat:@"@ %@", [CoreDataHelper formattedRemindAtTimeForIdea:obj] ];
     
     return cell;
 }

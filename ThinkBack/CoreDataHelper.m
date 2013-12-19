@@ -8,6 +8,7 @@
 
 #import "CoreDataHelper.h"
 
+
 @implementation CoreDataHelper
 
 +(NSManagedObjectContext *) getManagedObjectContext {
@@ -21,10 +22,8 @@
 
 +(void)prepareDataModelForTesting
 {
-    NSBundle *bundle =
-    [NSBundle bundleForClass:NSClassFromString(@"ThinkBackAppDelegate")];
-    NSString* path =
-    [bundle pathForResource:@"IdeaModel" ofType:@"momd"];
+    NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"ThinkBackAppDelegate")];
+    NSString* path = [bundle pathForResource:@"IdeaModel" ofType:@"momd"];
     NSURL *modURL = [NSURL URLWithString:path];
     NSManagedObjectModel *model =
     [[NSManagedObjectModel alloc] initWithContentsOfURL:modURL];
@@ -36,37 +35,101 @@
     [testingContext setPersistentStoreCoordinator: coord];
 }
 
++(void)populateDebugDataModel
+{
+    ThinkBackIdeaDataObject *i1 = [CoreDataHelper createIdea];
+    [i1 setText:@"Story Idea: Boy meets Grill"];
+    [i1 setRemindAt:[NSDate new]];
+
+    
+    ThinkBackIdeaDataObject *i2 = [CoreDataHelper createIdea];
+    [i2 setText:@"A Dyslexic Twitter"];
+    [i2 setRemindAt:[NSDate new]];
+
+    ThinkBackIdeaDataObject *i3 = [CoreDataHelper createIdea];
+    [i3 setText:@"A restaurant that only serves soup-flavored air."];
+    [i3 setRemindAt:[NSDate new]];
+
+    [[CoreDataHelper getManagedObjectContext] save:nil];
+}
+
+
 #pragma mark - primary Idea behavior
-//really simple CRUD becavior
+
 +(ThinkBackIdeaDataObject *)createIdea
 {
-    return [ThinkBackIdeaDataObject alloc];
+    NSManagedObjectContext *context = [CoreDataHelper getManagedObjectContext];
+    NSManagedObject *newContact = [NSEntityDescription insertNewObjectForEntityForName:kIdeaLogEntityName inManagedObjectContext:context];
+    return (ThinkBackIdeaDataObject *)newContact;
 }
 
-//Returns the most recent idea, null otherwise
-+(ThinkBackIdeaDataObject *)getIdea
++(NSArray *) getAllIdeas
 {
-    return [ThinkBackIdeaDataObject alloc];
+    NSManagedObjectContext *context = [CoreDataHelper getManagedObjectContext];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:kIdeaLogEntityName inManagedObjectContext:context];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    
+    NSManagedObject *matches = nil;
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request
+                                              error:&error];
+    
+    if ([objects count] == 0) {
+        NSLog(@"No matches");
+    } else {
+        matches = objects[0];
+        NSLog(@"%lu matches found", (unsigned long)[objects count]);
+    }
+    
+    return objects;
 }
 
-//first idea from predicate
-+(ThinkBackIdeaDataObject *)getFirstIdeaFromPredicate:(NSPredicate *)predicate
-{    
-    return [ThinkBackIdeaDataObject alloc];
-}
-
-
-//TODO:
-+(ThinkBackIdeaDataObject *)updateIdea:(ThinkBackIdeaDataObject *)idea
++(NSError *)saveIdea:(ThinkBackIdeaDataObject *)ideaToSave
 {
-    return [ThinkBackIdeaDataObject alloc];
+    NSManagedObjectContext *context = [CoreDataHelper getManagedObjectContext];
+    [context insertObject:ideaToSave];
+    NSError *error;
+    [context save:&error];
+    return error;
 }
 
-//takes an existing idea and atempts to remove it from the database. Returns true on successful deletion
-+(BOOL)deleteIdea:(ThinkBackIdeaDataObject *)ideaToDelete;
++(NSError *)deleteIdea:(ThinkBackIdeaDataObject *)ideaToSave
 {
-    return true;
+    NSManagedObjectContext *context = [CoreDataHelper getManagedObjectContext];
+    [context deleteObject:ideaToSave];
+    NSError *error;
+    [context save:&error];
+    return error;
 }
+
+
+
+#pragma mark String Formatting
+
+
++(NSString *) formattedRemindAtTimeForIdea:(ThinkBackIdeaDataObject *)object
+{
+    NSString *toRet = @"whenever";
+    if(object != nil && object.remindAt != nil){
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        if([object.remindAt isThisWeek]){
+            [dateFormatter setDateFormat:@"EEEE 'at' h:mm aa"];
+        }
+
+        NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        [dateFormatter setLocale:usLocale];
+        
+        toRet = [dateFormatter stringFromDate:object.remindAt];
+        // Date for locale en_US: Jan 2, 2001
+        
+    }
+    
+    return toRet;
+}
+
 
 
 @end
