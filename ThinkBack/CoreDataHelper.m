@@ -7,7 +7,7 @@
 //
 
 #import "CoreDataHelper.h"
-
+#import "NSDate+ThinkBack.h"
 
 @implementation CoreDataHelper
 
@@ -115,16 +115,23 @@
     NSString *toRet = @"whenever";
     if(object != nil && object.remindAt != nil){
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        if([object.remindAt isThisWeek]){
-            [dateFormatter setDateFormat:@"EEEE 'at' h:mm aa"];
-        }
+        [dateFormatter setDateStyle:NSDateFormatterFullStyle];
+        [dateFormatter setTimeStyle:NSDateFormatterFullStyle];
 
+        NSDate *dateCheck = object.remindAt;
+        if([dateCheck isToday]){
+            [dateFormatter setDateFormat:@"'today at' h:mm aa"];
+        }else if([dateCheck isTomorrow]){
+            [dateFormatter setDateFormat:@"'tomorrow at' h:mm aa"];
+        }else if([dateCheck isThisWeek]){
+            [dateFormatter setDateFormat:@"EEEE 'at' h:mm aa"];
+        }else {
+            [dateFormatter setDateFormat:@"dd/mm/yy 'at' h:mm aa"];
+        }
         NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
         [dateFormatter setLocale:usLocale];
         
         toRet = [dateFormatter stringFromDate:object.remindAt];
-        // Date for locale en_US: Jan 2, 2001
-        
     }
     
     return toRet;
