@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 DanDrew. All rights reserved.
 //
 
-#import "CoreDataHelper.h"
+#import "ThinkBack.h"
 #import "NSDate+ThinkBack.h"
 
-@implementation CoreDataHelper
+@implementation ThinkBack
 
 +(NSManagedObjectContext *) getManagedObjectContext {
     if ([UIApplication sharedApplication] == nil) {
@@ -37,22 +37,22 @@
 
 +(void)populateDebugDataModel
 {
-    ThinkBackIdeaDataObject *i1 = [CoreDataHelper createIdea];
+    ThinkBackIdeaDataObject *i1 = [ThinkBack createIdea];
     [i1 setText:@"Story Idea: Boy meets Grill"];
     [i1 setRemindAt:[NSDate randomTimeFromSettings]];
-    [CoreDataHelper setRemindType:ThinkBackRemindTypeTimeExact forIdea:i1];
+    [ThinkBack setRemindType:ThinkBackRemindTypeTimeExact forIdea:i1];
     
-    ThinkBackIdeaDataObject *i2 = [CoreDataHelper createIdea];
+    ThinkBackIdeaDataObject *i2 = [ThinkBack createIdea];
     [i2 setText:@"A Dyslexic Twitter"];
     [i2 setRemindAt:[NSDate randomTimeFromSettings]];
-    [CoreDataHelper setRemindType:ThinkBackRemindTypeTimeFuzzy forIdea:i2];
+    [ThinkBack setRemindType:ThinkBackRemindTypeTimeFuzzy forIdea:i2];
 
-    ThinkBackIdeaDataObject *i3 = [CoreDataHelper createIdea];
+    ThinkBackIdeaDataObject *i3 = [ThinkBack createIdea];
     [i3 setText:@"A restaurant that only serves soup-flavored air."];
     [i3 setRemindAt:[NSDate randomTimeFromSettings]];
-    [CoreDataHelper setRemindType:ThinkBackRemindTypeTimeNever forIdea:i3];
+    [ThinkBack setRemindType:ThinkBackRemindTypeTimeNever forIdea:i3];
     
-    [[CoreDataHelper getManagedObjectContext] save:nil];
+    [[ThinkBack getManagedObjectContext] save:nil];
 }
 
 
@@ -60,7 +60,7 @@
 
 +(ThinkBackIdeaDataObject *)createIdea
 {
-    NSManagedObjectContext *context = [CoreDataHelper getManagedObjectContext];
+    NSManagedObjectContext *context = [ThinkBack getManagedObjectContext];
     NSManagedObject *newContact = [NSEntityDescription insertNewObjectForEntityForName:kIdeaLogEntityName inManagedObjectContext:context];
     
     return (ThinkBackIdeaDataObject *)newContact;
@@ -68,7 +68,7 @@
 
 +(NSArray *) getAllIdeas
 {
-    NSManagedObjectContext *context = [CoreDataHelper getManagedObjectContext];
+    NSManagedObjectContext *context = [ThinkBack getManagedObjectContext];
     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:kIdeaLogEntityName inManagedObjectContext:context];
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -92,7 +92,7 @@
 
 +(NSError *)saveIdea:(ThinkBackIdeaDataObject *)ideaToSave
 {
-    NSManagedObjectContext *context = [CoreDataHelper getManagedObjectContext];
+    NSManagedObjectContext *context = [ThinkBack getManagedObjectContext];
     [context insertObject:ideaToSave];
     NSError *error;
     [context save:&error];
@@ -101,7 +101,7 @@
 
 +(NSError *)deleteIdea:(ThinkBackIdeaDataObject *)ideaToSave
 {
-    NSManagedObjectContext *context = [CoreDataHelper getManagedObjectContext];
+    NSManagedObjectContext *context = [ThinkBack getManagedObjectContext];
     [context deleteObject:ideaToSave];
     NSError *error;
     [context save:&error];
@@ -132,7 +132,7 @@
 +(NSString *) formattedRemindAtTimeForIdea:(ThinkBackIdeaDataObject *)object
 {
     NSString *toRet = @"";
-    ThinkBackRemindType remindType = [CoreDataHelper getRemindTypeForIdea:object];
+    ThinkBackRemindType remindType = [ThinkBack getRemindTypeForIdea:object];
     
     if((remindType & ThinkBackRemindTypeTimeExact)){
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

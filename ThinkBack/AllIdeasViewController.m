@@ -7,7 +7,7 @@
 //
 
 #import "AllIdeasViewController.h"
-#import "CoreDataHelper.h"
+#import "ThinkBack.h"
 #import "IdeaTableViewCell.h"
 
 @interface AllIdeasViewController ()
@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.allIdeas = [CoreDataHelper getAllIdeas];
+    self.allIdeas = [ThinkBack getAllIdeas];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -74,7 +74,7 @@
     }
     ThinkBackIdeaDataObject *obj = (ThinkBackIdeaDataObject *)[self.allIdeas objectAtIndex:indexPath.row];
     cell.ideaText.text = [obj text];
-    cell.ideaRemindMe.text = [NSString stringWithFormat:@"@ %@", [CoreDataHelper formattedRemindAtTimeForIdea:obj] ];
+    cell.ideaRemindMe.text = [NSString stringWithFormat:@"@ %@", [ThinkBack formattedRemindAtTimeForIdea:obj] ];
     
     return cell;
 }

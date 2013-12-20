@@ -14,7 +14,7 @@
 NSManagedObjectContext *testingContext;
 static NSString* kIdeaLogEntityName = @"IdeaLogEntity";
 
-@interface CoreDataHelper : NSObject
+@interface ThinkBack : NSObject
 
 +(NSManagedObjectContext *) getManagedObjectContext;
 

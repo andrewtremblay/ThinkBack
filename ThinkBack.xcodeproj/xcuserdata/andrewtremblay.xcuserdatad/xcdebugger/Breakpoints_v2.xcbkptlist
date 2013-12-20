@@ -9,7 +9,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ThinkBack/CoreDataHelper.m"
+            filePath = "ThinkBack/ThinkBack.m"
             timestampString = "409193910.196777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

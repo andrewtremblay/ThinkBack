@@ -7,7 +7,7 @@
 //
 
 #import "NewIdeaViewController.h"
-#import "CoreDataHelper.h"
+#import "ThinkBack.h"
 #import "NSDate+ThinkBack.h"
 #import "NSString+TrimLeadingWhitespace.h"
 
@@ -34,7 +34,7 @@ NSInteger kSetDateTag = 1;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.temporaryIdea = [CoreDataHelper createIdea];
+    self.temporaryIdea = [ThinkBack createIdea];
 
     
     [self.remindAtWrapperView setAlpha:0.0f];
@@ -59,7 +59,7 @@ NSInteger kSetDateTag = 1;
 -(void)updateUiForData
 {
     [self.ideaTextView setText:self.temporaryIdea.text];
-    NSString *remindAtCheck = [CoreDataHelper formattedRemindAtTimeForIdea:self.temporaryIdea];
+    NSString *remindAtCheck = [ThinkBack formattedRemindAtTimeForIdea:self.temporaryIdea];
     if([remindAtCheck length] > 0){
         NSString *formattedDateTime = [NSString stringWithFormat:@"@ %@", remindAtCheck];
         [self.ideaRemindAtBtn setTitle:formattedDateTime forState:UIControlStateNormal];
@@ -79,7 +79,7 @@ NSInteger kSetDateTag = 1;
         [self.temporaryIdea setText:self.ideaTextView.text];
 //    [self.temporaryIdea setRemindAt:[NSDate date]];
         //save the data and back out of the window
-        [CoreDataHelper saveIdea:self.temporaryIdea];
+        [ThinkBack saveIdea:self.temporaryIdea];
     }
 
     //navigate away
@@ -97,7 +97,7 @@ NSInteger kSetDateTag = 1;
     if(self.ideaTextView.text.length > 0){
         [self promptErrorModal: @"Something was entered." withConfirmText:@"Discard Idea" andAlertTag:kBackOutTag];
     }else{
-        [CoreDataHelper deleteIdea:self.temporaryIdea];
+        [ThinkBack deleteIdea:self.temporaryIdea];
         self.temporaryIdea = nil;
         [self finishAndSave];
     }
@@ -127,7 +127,7 @@ NSInteger kSetDateTag = 1;
         [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
     }else{
         if(alertView.tag == kBackOutTag){
-            [CoreDataHelper deleteIdea:self.temporaryIdea];
+            [ThinkBack deleteIdea:self.temporaryIdea];
             self.temporaryIdea = nil;
             [self finishAndSave];
         }if (alertView.tag == kSetDateTag) {
@@ -162,11 +162,11 @@ NSInteger kSetDateTag = 1;
     }else if(sender == self.remindAtOptionFuzzyTime){
         //find a random time in the future, set that as the reminder option
         [self.temporaryIdea setRemindAt:[NSDate randomTimeFromSettings]];
-        [CoreDataHelper setRemindType:(ThinkBackRemindTypeTimeFuzzy) forIdea:self.temporaryIdea];
+        [ThinkBack setRemindType:(ThinkBackRemindTypeTimeFuzzy) forIdea:self.temporaryIdea];
         
     }else if(sender == self.remindAtOptionFuzzyTime){
         [self.temporaryIdea setRemindAt:[NSDate never]];
-        [CoreDataHelper setRemindType:(ThinkBackRemindTypeTimeNever) forIdea:self.temporaryIdea];
+        [ThinkBack setRemindType:(ThinkBackRemindTypeTimeNever) forIdea:self.temporaryIdea];
         
     }
     
