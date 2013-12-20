@@ -64,7 +64,7 @@
 
     
     //
-    if(self.selectedWebPrompt != [ThinkBack webPrompt])
+    if(![self.selectedWebPrompt isEqualToString:[ThinkBack webPrompt]])
     {
         hasChanges = YES;
     }
