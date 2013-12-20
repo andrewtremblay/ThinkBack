@@ -15,7 +15,6 @@
     [self setValue:text forKey:@"text"];
     [self didChangeValueForKey:@"text"];
 }
-
 -(NSString *)text
 {
     return [self valueForKey:@"text"];
@@ -28,10 +27,21 @@
     [self setValue:newDate forKey:@"remindAt"];
     [self didChangeValueForKey:@"remindAt"];
 }
-
 -(NSDate *)remindAt
 {
     return [self valueForKey:@"remindAt"];
 }
+
+//ThinkBackRemindType
+-(void)setRemindType:(NSNumber *)newType
+{
+    [self willChangeValueForKey:@"remindType"];
+    [self setValue:newType forKey:@"remindType"];
+    [self didChangeValueForKey:@"remindType"];
+}
+-(NSNumber *)remindType {
+    return [self valueForKey:@"remindType"];
+}
+
 @end
 
