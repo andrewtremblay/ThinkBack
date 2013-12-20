@@ -161,6 +161,8 @@
 		310CBB0317EFFB2300F8A534 /* ThinkBack */ = {
 			isa = PBXGroup;
 			children = (
+				319303E718283CF4000B5B5D /* ThinkBack.h */,
+				319303E818283CF4000B5B5D /* ThinkBack.m */,
 				310CBB0C17EFFB2300F8A534 /* ThinkBackAppDelegate.h */,
 				310CBB0D17EFFB2300F8A534 /* ThinkBackAppDelegate.m */,
 				319303E518283C58000B5B5D /* Helpers */,
@@ -230,14 +232,9 @@
 		319303E518283C58000B5B5D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				31DDF1C61863DE84003FD361 /* Core Extensions */,
 				310E8C34185A3FD8008FD326 /* UserDefaults */,
 				31D924F4184A9CDA00012197 /* Data Objects */,
-				319303E718283CF4000B5B5D /* ThinkBack.h */,
-				319303E818283CF4000B5B5D /* ThinkBack.m */,
-				315BB5D818638B9A008967C6 /* NSDate+ThinkBack.h */,
-				315BB5D918638B9A008967C6 /* NSDate+ThinkBack.m */,
-				31DDF1C31863D689003FD361 /* NSString+TrimLeadingWhitespace.h */,
-				31DDF1C41863D689003FD361 /* NSString+TrimLeadingWhitespace.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -261,6 +258,17 @@
 				319304381828AD79000B5B5D /* ThinkBackIdeaDataObject.m */,
 			);
 			name = "Data Objects";
+			sourceTree = "<group>";
+		};
+		31DDF1C61863DE84003FD361 /* Core Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				315BB5D818638B9A008967C6 /* NSDate+ThinkBack.h */,
+				315BB5D918638B9A008967C6 /* NSDate+ThinkBack.m */,
+				31DDF1C31863D689003FD361 /* NSString+TrimLeadingWhitespace.h */,
+				31DDF1C41863D689003FD361 /* NSString+TrimLeadingWhitespace.m */,
+			);
+			name = "Core Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
