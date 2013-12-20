@@ -56,6 +56,35 @@
 }
 
 
++(void)setDefaultSettings {
+    [self setShouldContextScan:YES];
+    [self setWebPrompt:kSettingsWebOptionsSafari];
+}
++(BOOL)shouldContextScan
+{
+    return [(NSNumber *)[ThinkBackKeychainHelper load:@"shouldContextScan"] boolValue];
+}
++(void)setShouldContextScan:(BOOL)contextScan
+{
+    [ThinkBackKeychainHelper save:@"shouldContextScan" data:[NSNumber numberWithBool:contextScan]];
+}
++(NSString *)webPrompt
+{
+   return [ThinkBackKeychainHelper load:@"webPrompt"];
+}
++(void)setWebPrompt:(NSString *)webPrompt
+{
+    //kSettingsWebOptionsSafari kSettingsWebOptionsChrome kSettingsWebOptionsPopup
+    //if safari, then http:// https://
+    // if popup, then http:// https:// (in webview modal)
+    // if chrome, then googlechrome:// googlechromes://
+    //chrome is not installed, would you like to install it? [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"itms-apps://itunes.apple.com/us/app/chrome/id535886823"]];
+    [ThinkBackKeychainHelper save:@"webPrompt" data:webPrompt];
+}
+
+
+
+
 #pragma mark - primary Idea behavior
 
 +(ThinkBackIdeaDataObject *)createIdea

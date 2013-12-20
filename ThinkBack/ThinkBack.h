@@ -10,9 +10,15 @@
 
 #import "ThinkBackAppDelegate.h"
 #import "ThinkBackIdeaDataObject.h"
+#import "ThinkBackKeychainHelper.h"
 
 NSManagedObjectContext *testingContext;
 static NSString* kIdeaLogEntityName = @"IdeaLogEntity";
+
+
+static NSString* kSettingsWebOptionsSafari = @"safari";
+static NSString* kSettingsWebOptionsChrome = @"chrome";
+static NSString* kSettingsWebOptionsPopup  = @"popup";
 
 @interface ThinkBack : NSObject
 
@@ -21,6 +27,13 @@ static NSString* kIdeaLogEntityName = @"IdeaLogEntity";
 +(void)prepareDataModelForTesting;
 
 +(void)populateDebugDataModel;
+
+#pragma mark Settings page
++(void)setDefaultSettings;
++(BOOL)shouldContextScan;
++(void)setShouldContextScan:(BOOL)contextScan;
++(NSString *)webPrompt;
++(void)setWebPrompt:(NSString *)webPrompt;
 
 #pragma mark primary Idea behavior (common CRUD)
 
