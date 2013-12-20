@@ -7,7 +7,6 @@
 //Returns true on success
 + (BOOL)save:(NSString *)service data:(id)data
 {
-    
     BOOL wasSuccessful = YES;
     NSMutableDictionary *keychainQuery = [self getKeychainQuery:service];
     OSStatus resultCode = SecItemDelete((__bridge CFDictionaryRef)keychainQuery);
@@ -15,7 +14,7 @@
     resultCode =  SecItemAdd((__bridge CFDictionaryRef)keychainQuery, NULL);
     if(resultCode != noErr){
         NSLog(@"Attempting to store %@ failed", data);
-        NSLog(@"Error storing to keychain: %ld : %@", resultCode, [ThinkBackKeychainHelper errorMessageFromCode:resultCode]);
+        NSLog(@"Error storing to keychain: %d : %@", (int)resultCode, [ThinkBackKeychainHelper errorMessageFromCode:resultCode]);
         if(resultCode == errSecDuplicateItem){
             id dataExistenceCheck = [ThinkBackKeychainHelper load:service];
             NSLog(@"This exists instead: %@", dataExistenceCheck);
@@ -62,7 +61,7 @@
     NSMutableDictionary *keychainQuery = [self getKeychainQuery:service];
     OSStatus resultCode = SecItemDelete((__bridge CFDictionaryRef) keychainQuery);
     if(resultCode != noErr){
-        NSLog(@"Error deleting from keychain: %ld : %@", resultCode, [ThinkBackKeychainHelper errorMessageFromCode:resultCode]);
+        NSLog(@"Error deleting from keychain: %d : %@", (int)resultCode, [ThinkBackKeychainHelper errorMessageFromCode:resultCode]);
         wasSuccessful = NO;
     }else{
         wasSuccessful = YES;
