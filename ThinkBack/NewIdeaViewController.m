@@ -8,9 +8,11 @@
 
 #import "NewIdeaViewController.h"
 #import "CoreDataHelper.h"
+#import "NSDate+ThinkBack.h"
+#import "NSString+TrimLeadingWhitespace.h"
 
-NSString *kBackButtonMessage    = @"Something was entered.";
-NSString *kSetDateButtonMessage = @"Nothing was entered.";
+NSInteger kBackOutTag = 0;
+NSInteger kSetDateTag = 1;
 
 @interface NewIdeaViewController ()
 
@@ -33,15 +35,17 @@ NSString *kSetDateButtonMessage = @"Nothing was entered.";
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.temporaryIdea = [CoreDataHelper createIdea];
+
     
-    
+    [self.remindAtWrapperView setAlpha:0.0f];
+    [self.ideaRemindAtBtn setBackgroundColor:[UIColor clearColor]];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
     [self updateUiForData];
-    
     [self.ideaTextView becomeFirstResponder];
 }
 
@@ -55,10 +59,18 @@ NSString *kSetDateButtonMessage = @"Nothing was entered.";
 -(void)updateUiForData
 {
     [self.ideaTextView setText:self.temporaryIdea.text];
-    
-//    NSString *formattedDateTime = [self.temporaryIdea formattedRemindAtTime];
-    NSString *formattedDateTime = [NSString stringWithFormat:@"@ %@", [CoreDataHelper formattedRemindAtTimeForIdea:self.temporaryIdea]];
-    [self.ideaRemindAtTextView setText:formattedDateTime];
+    NSString *remindAtCheck = [CoreDataHelper formattedRemindAtTimeForIdea:self.temporaryIdea];
+    if([remindAtCheck length] > 0){
+        NSString *formattedDateTime = [NSString stringWithFormat:@"@ %@", remindAtCheck];
+        [self.ideaRemindAtBtn setTitle:formattedDateTime forState:UIControlStateNormal];
+        [self.ideaRemindAtBtn setEnabled:YES];
+        [self.ideaRemindAtBtn setHidden:NO];
+    }else {
+        //we are unset, don't show anything
+        [self.ideaRemindAtBtn setTitle:@" " forState:UIControlStateNormal];
+        [self.ideaRemindAtBtn setHidden:YES];
+        [self.ideaRemindAtBtn setEnabled:NO];
+    }
 }
 
 -(void)finishAndSave
@@ -81,8 +93,9 @@ NSString *kSetDateButtonMessage = @"Nothing was entered.";
 
 //Nav
 - (IBAction)backButtonPressed:(id)sender {
+    self.ideaTextView.text = [self.ideaTextView.text stringByTrimmingLeadingWhitespace];
     if(self.ideaTextView.text.length > 0){
-        [self promptErrorModal:kBackButtonMessage withConfirmText:@"Discard Idea"];
+        [self promptErrorModal: @"Something was entered." withConfirmText:@"Discard Idea" andAlertTag:kBackOutTag];
     }else{
         [CoreDataHelper deleteIdea:self.temporaryIdea];
         self.temporaryIdea = nil;
@@ -91,19 +104,21 @@ NSString *kSetDateButtonMessage = @"Nothing was entered.";
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
+    self.ideaTextView.text = [self.ideaTextView.text stringByTrimmingLeadingWhitespace];
     if(self.ideaTextView.text == nil || self.ideaTextView.text.length == 0){
-        [self promptErrorModal:kSetDateButtonMessage withConfirmText:@"Set Date"];
+        [self promptErrorModal:@"Nothing was entered." withConfirmText:@"Set Date" andAlertTag:kSetDateTag];
     }else{
-        [self finishAndSave];
+        [self promptDateSelection];
     }
 }
 
--(void)promptErrorModal:(NSString *)alertMsg withConfirmText:confirmText {
+-(void)promptErrorModal:(NSString *)alertMsg withConfirmText:confirmText andAlertTag:(NSInteger) tag {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Continue?"
                                                     message:alertMsg
                                                    delegate:self
                                           cancelButtonTitle:@"Edit Idea"
                                           otherButtonTitles:confirmText, nil];
+    [alert setTag:tag];
     [alert show];
 }
 
@@ -111,11 +126,11 @@ NSString *kSetDateButtonMessage = @"Nothing was entered.";
     if(buttonIndex == 0){
         [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
     }else{
-        if([alertView.message isEqualToString:kBackButtonMessage]){
+        if(alertView.tag == kBackOutTag){
             [CoreDataHelper deleteIdea:self.temporaryIdea];
             self.temporaryIdea = nil;
             [self finishAndSave];
-        }if ([alertView.message isEqualToString:kSetDateButtonMessage]) {
+        }if (alertView.tag == kSetDateTag) {
             [self promptDateSelection];
         }
     }
@@ -125,7 +140,39 @@ NSString *kSetDateButtonMessage = @"Nothing was entered.";
 {
     [self.ideaTextView resignFirstResponder];
     
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         [self.remindAtWrapperView setAlpha:1.0f];
+                         [self.ideaRemindAtBtn setBackgroundColor:self.remindAtWrapperView.backgroundColor];
+                     }
+                     completion:^(BOOL finished){
+                         //set view interaction enabled
+                         [self.ideaRemindAtBtn setEnabled:NO];
+                     }];
 }
 
 
+- (IBAction)setRemindDateOptionPressed:(id)sender {
+    if(sender == self.remindAtOptionExactTime){
+        //prompt date picker
+        
+        
+    }else if(sender == self.remindAtOptionFuzzyTime){
+        //find a random time in the future, set that as the reminder option
+        [self.temporaryIdea setRemindAt:[NSDate randomTimeFromSettings]];
+        [CoreDataHelper setRemindType:(ThinkBackRemindTypeTimeFuzzy) forIdea:self.temporaryIdea];
+        
+    }else if(sender == self.remindAtOptionFuzzyTime){
+        [self.temporaryIdea setRemindAt:[NSDate never]];
+        [CoreDataHelper setRemindType:(ThinkBackRemindTypeTimeNever) forIdea:self.temporaryIdea];
+        
+    }
+    
+}
+
+- (IBAction)ideaRemindAtBtnPressed:(id)sender {
+    [self promptDateSelection];
+}
 @end

@@ -13,11 +13,19 @@
 - (IBAction)doneButtonPressed:(id)sender;
 - (IBAction)backButtonPressed:(id)sender;
     @property (weak, nonatomic) IBOutlet UITextView *ideaTextView;
-    @property (weak, nonatomic) IBOutlet UILabel *ideaRemindAtTextView;
+@property (weak, nonatomic) IBOutlet UIButton *ideaRemindAtBtn;
+- (IBAction)ideaRemindAtBtnPressed:(id)sender;
 
     @property (nonatomic, strong) ThinkBackIdeaDataObject *temporaryIdea;
 
     @property (weak, nonatomic)   IBOutlet UIView *remindAtWrapperView;
     @property (strong, nonatomic) IBOutlet UIView *baseView;
+
+- (IBAction)setRemindDateOptionPressed:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *remindAtOptionNever;
+@property (weak, nonatomic) IBOutlet UIButton *remindAtOptionExactTime;
+@property (weak, nonatomic) IBOutlet UIButton *remindAtOptionFuzzyTime;
+
 
 @end
