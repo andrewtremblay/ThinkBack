@@ -21,7 +21,7 @@
     // Override point for customization after application launch.
     [ThinkBack getManagedObjectContext];
     [ThinkBack populateDebugDataModel];
-    
+    [ThinkBack setDefaultSettings];
     return YES;
 }
 							
