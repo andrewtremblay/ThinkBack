@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 ThinkBack. All rights reserved.
 //
 
-#import "NewIdeaViewController.h"
+#import "IdeaViewController.h"
 #import "ThinkBack.h"
 #import "NSDate+ThinkBack.h"
 #import "NSString+TrimLeadingWhitespace.h"
@@ -14,11 +14,11 @@
 NSInteger kBackOutTag = 0;
 NSInteger kSetDateTag = 1;
 
-@interface NewIdeaViewController ()
+@interface IdeaViewController ()
 
 @end
 
-@implementation NewIdeaViewController
+@implementation IdeaViewController
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

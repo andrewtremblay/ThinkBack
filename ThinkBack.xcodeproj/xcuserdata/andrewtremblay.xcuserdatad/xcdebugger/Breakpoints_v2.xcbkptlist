@@ -41,7 +41,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ThinkBack/NewIdeaViewController.m"
+            filePath = "ThinkBack/IdeaViewController.m"
             timestampString = "409196242.78237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

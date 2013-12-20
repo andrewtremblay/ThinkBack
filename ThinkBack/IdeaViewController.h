@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ThinkBackIdeaDataObject.h"
 
-@interface NewIdeaViewController : UIViewController <UIAlertViewDelegate>
+@interface IdeaViewController : UIViewController <UIAlertViewDelegate>
 - (IBAction)doneButtonPressed:(id)sender;
 - (IBAction)backButtonPressed:(id)sender;
     @property (weak, nonatomic) IBOutlet UITextView *ideaTextView;

@@ -370,10 +370,10 @@
             </objects>
             <point key="canvasLocation" x="194" y="151"/>
         </scene>
-        <!--New Idea View Controller-->
+        <!--Idea View Controller-->
         <scene sceneID="JSw-Vv-VQu">
             <objects>
-                <viewController modalTransitionStyle="partialCurl" id="zCt-NU-eTg" customClass="NewIdeaViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="partialCurl" id="zCt-NU-eTg" customClass="IdeaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ITp-oe-F3x"/>
                         <viewControllerLayoutGuide type="bottom" id="EID-ju-Uhq"/>
