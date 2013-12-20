@@ -39,17 +39,19 @@
 {
     ThinkBackIdeaDataObject *i1 = [CoreDataHelper createIdea];
     [i1 setText:@"Story Idea: Boy meets Grill"];
-    [i1 setRemindAt:[NSDate new]];
-
+    [i1 setRemindAt:[NSDate randomTimeFromSettings]];
+    [CoreDataHelper setRemindType:ThinkBackRemindTypeTimeExact forIdea:i1];
     
     ThinkBackIdeaDataObject *i2 = [CoreDataHelper createIdea];
     [i2 setText:@"A Dyslexic Twitter"];
-    [i2 setRemindAt:[NSDate new]];
+    [i2 setRemindAt:[NSDate randomTimeFromSettings]];
+    [CoreDataHelper setRemindType:ThinkBackRemindTypeTimeFuzzy forIdea:i2];
 
     ThinkBackIdeaDataObject *i3 = [CoreDataHelper createIdea];
     [i3 setText:@"A restaurant that only serves soup-flavored air."];
-    [i3 setRemindAt:[NSDate new]];
-
+    [i3 setRemindAt:[NSDate randomTimeFromSettings]];
+    [CoreDataHelper setRemindType:ThinkBackRemindTypeTimeNever forIdea:i3];
+    
     [[CoreDataHelper getManagedObjectContext] save:nil];
 }
 
@@ -60,6 +62,7 @@
 {
     NSManagedObjectContext *context = [CoreDataHelper getManagedObjectContext];
     NSManagedObject *newContact = [NSEntityDescription insertNewObjectForEntityForName:kIdeaLogEntityName inManagedObjectContext:context];
+    
     return (ThinkBackIdeaDataObject *)newContact;
 }
 
@@ -105,11 +108,21 @@
     return error;
 }
 
+
+
 +(BOOL)ideaObjectIsValid:(ThinkBackIdeaDataObject *)ideaToCheck
 {
     return [ideaToCheck text] != nil && [[ideaToCheck text] length] > 0;
 }
-
++(void)setRemindType:(ThinkBackRemindType)type forIdea:(ThinkBackIdeaDataObject *)idea
+{
+    //do more remind logic for the type we get (make sure dates are set properly)
+    [idea setRemindType: [NSNumber numberWithUnsignedInteger:type]];
+}
++(ThinkBackRemindType)getRemindTypeForIdea:(ThinkBackIdeaDataObject *)idea
+{
+    return [idea.remindType unsignedIntegerValue];
+}
 
 
 
@@ -118,12 +131,14 @@
 
 +(NSString *) formattedRemindAtTimeForIdea:(ThinkBackIdeaDataObject *)object
 {
-    NSString *toRet = @"whenever";
-    if(object != nil && object.remindAt != nil){
+    NSString *toRet = @"";
+    ThinkBackRemindType remindType = [CoreDataHelper getRemindTypeForIdea:object];
+    
+    if((remindType & ThinkBackRemindTypeTimeExact)){
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateStyle:NSDateFormatterFullStyle];
         [dateFormatter setTimeStyle:NSDateFormatterFullStyle];
-
+        
         NSDate *dateCheck = object.remindAt;
         if([dateCheck isToday]){
             [dateFormatter setDateFormat:@"'today at' h:mm aa"];
@@ -131,13 +146,18 @@
             [dateFormatter setDateFormat:@"'tomorrow at' h:mm aa"];
         }else if([dateCheck isThisWeek]){
             [dateFormatter setDateFormat:@"EEEE 'at' h:mm aa"];
+        }else if(dateCheck == [NSDate never]){
+            toRet = @"never";
         }else {
             [dateFormatter setDateFormat:@"dd/mm/yy 'at' h:mm aa"];
         }
         NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
         [dateFormatter setLocale:usLocale];
-        
         toRet = [dateFormatter stringFromDate:object.remindAt];
+    }else if ((remindType & ThinkBackRemindTypeTimeFuzzy)){
+        toRet = @"whenever";
+    }else if ((remindType & ThinkBackRemindTypeTimeNever)){
+        toRet = @"never";
     }
     
     return toRet;
