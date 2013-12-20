@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThinkBackSettingsViewController : UIViewController
+@interface ThinkBackSettingsViewController : UIViewController <UIAlertViewDelegate>
+@property (weak, nonatomic) IBOutlet UISwitch *contextDetectSwitch;
+- (IBAction)contextDetectSwitchValueChanged:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *webOptionsSegmentedControl;
+- (IBAction)webOptionsSegmentedControlValueChanged:(id)sender;
+
+//nav buttons
+@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
+- (IBAction)backButtonPressed:(id)sender;
+- (IBAction)saveButtonPressed:(id)sender;
 
 @end
