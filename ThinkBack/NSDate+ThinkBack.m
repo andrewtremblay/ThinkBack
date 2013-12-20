@@ -43,75 +43,47 @@
 }
 
 +(NSDate *)randomTimeInNextHour{
-    NSDateComponents *dc = [[NSCalendar currentCalendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
-    //get some chaos
-    int randMin  = arc4random() % 59; //0 - 59
-    int randSec  = 5 + arc4random() % 55; //5 - 60 //at least 5 seconds
-    //set our random digits
-    [dc setMinute:randMin];
-    [dc setSecond:randSec];
-    NSDate *randomHourDateTime = [[NSCalendar currentCalendar] dateFromComponents:dc];
+    NSDateComponents *offsetComponents = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit) fromDate:[NSDate now]];
+    offsetComponents.minute += arc4random() % 59; // LEAP MINUTES????
+    offsetComponents.second += arc4random() % 60; // LEAP SECONDS????
+    NSDate *randomHourDateTime = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents toDate:[NSDate today] options:0];
     return randomHourDateTime;
 }
 +(NSDate *)randomTimeInNextDay {
-    NSDateComponents *dc = [[NSCalendar currentCalendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
-    //get some chaos
-    int randHour = arc4random() % 23; //0 - 23
-    int randMin  = arc4random() % 59; //0 - 59
-    int randSec  = 5 + arc4random() % 55; //5 - 60 //at least 5 seconds
-    //set our random digits
-    [dc setHour:randHour];
-    [dc setMinute:randMin];
-    [dc setSecond:randSec];
-    NSDate *randomDayDateTime = [[NSCalendar currentCalendar] dateFromComponents:dc];
+    NSDateComponents *offsetComponents = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit) fromDate:[NSDate now]];
+    offsetComponents.hour += arc4random() % 24; //LEAP DAYS???
+    offsetComponents.minute += arc4random() % 60; // LEAP MINUTES????
+    offsetComponents.second += arc4random() % 60; // LEAP SECONDS????
+    NSDate *randomDayDateTime = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents toDate:[NSDate today] options:0];
     return randomDayDateTime;
 }
 +(NSDate *)randomTimeInNextWeek {
-    NSDateComponents *dc = [[NSCalendar currentCalendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
-    //get some chaos
-    int randDay  = arc4random() % 6; //0 - 6
-    int randHour = arc4random() % 23; //0 - 23
-    int randMin  = arc4random() % 59; //0 - 59
-    int randSec  = 5 + arc4random() % 55; //5 - 60 //at least 5 seconds
-    //set our random digits
-    [dc setDay:dc.day + randDay];
-    [dc setHour:randHour];
-    [dc setMinute:randMin];
-    [dc setSecond:randSec];
-
-    NSDate *randomWeekDateTime = [[NSCalendar currentCalendar] dateFromComponents:dc];
+    NSDateComponents *offsetComponents = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit) fromDate:[NSDate now]];
+    offsetComponents.day += arc4random() % 7;
+    offsetComponents.hour += arc4random() % 24; //LEAP DAYS???
+    offsetComponents.minute += arc4random() % 60; // LEAP MINUTES????
+    offsetComponents.second += arc4random() % 60; // LEAP SECONDS????
+    NSDate *randomWeekDateTime = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents toDate:[NSDate today] options:0];
     return randomWeekDateTime;
 }
 +(NSDate *)randomTimeInNextMonth {
-    NSDateComponents *dc = [[NSCalendar currentCalendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
-    //get some chaos
-    int randDay  = arc4random() % 30; //0 - 6
-    int randHour = arc4random() % 23; //0 - 23
-    int randMin  = arc4random() % 59; //0 - 59
-    int randSec  = 5 + arc4random() % 55; //5 - 60 //at least 5 seconds
-    //set our random digits
-    [dc setDay:dc.day + randDay];
-    [dc setHour:randHour];
-    [dc setMinute:randMin];
-    [dc setSecond:randSec];
-    
-    NSDate *randomWeekDateTime = [[NSCalendar currentCalendar] dateFromComponents:dc];
-    return randomWeekDateTime;
+    NSDateComponents *offsetComponents = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit) fromDate:[NSDate now]];
+    offsetComponents.day += arc4random() % 30;
+    offsetComponents.hour += arc4random() % 24; //LEAP DAYS???
+    offsetComponents.minute += arc4random() % 60; // LEAP MINUTES????
+    offsetComponents.second += arc4random() % 60; // LEAP SECONDS????
+    NSDate *randomMonthDateTime = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents toDate:[NSDate today] options:0];
+    return randomMonthDateTime;
 }
 +(NSDate *)randomTimeInNextYear {
-    NSDateComponents *dc = [[NSCalendar currentCalendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
     //get some chaos
-    int randDay  = arc4random() % 365; //0 - 365
-    int randHour = arc4random() % 23; //0 - 23
-    int randMin  = arc4random() % 59; //0 - 59
-    int randSec  = 5 + arc4random() % 55; //5 - 60 //at least 5 seconds
-    //set our random digits
-    [dc setDay:dc.day + randDay];
-    [dc setHour:randHour];
-    [dc setMinute:randMin];
-    [dc setSecond:randSec];
-    
-    NSDate *randomYearDateTime = [[NSCalendar currentCalendar] dateFromComponents:dc];
+    NSDateComponents *offsetComponents = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit) fromDate:[NSDate now]];
+    offsetComponents.day += arc4random() % 365;
+    offsetComponents.hour += arc4random() % 24; //LEAP DAYS???
+    offsetComponents.minute += arc4random() % 60; // LEAP MINUTES????
+    offsetComponents.second += arc4random() % 60; // LEAP SECONDS????
+
+    NSDate *randomYearDateTime = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents toDate:[NSDate today] options:0];
     return randomYearDateTime;
 }
 
