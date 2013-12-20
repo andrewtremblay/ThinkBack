@@ -33,7 +33,7 @@
 		31C776FD181AEB8800F2C3E8 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C776FC181AEB8800F2C3E8 /* gear.png */; };
 		31C7770118205D6800F2C3E8 /* IdeaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C776FF18205D6800F2C3E8 /* IdeaModel.xcdatamodeld */; };
 		31C7770318224F1300F2C3E8 /* Icon-ThinkBack-Rough.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C7770218224F1300F2C3E8 /* Icon-ThinkBack-Rough.png */; };
-		31D924F3184A9CB200012197 /* ThinkBackDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D924F2184A9CB200012197 /* ThinkBackDataManager.m */; };
+		31DDF1C51863D689003FD361 /* NSString+TrimLeadingWhitespace.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DDF1C41863D689003FD361 /* NSString+TrimLeadingWhitespace.m */; };
 		31F72C34180F460C00ADFD61 /* AllIdeasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F72C32180F460C00ADFD61 /* AllIdeasViewController.m */; };
 		31F72C38180F467B00ADFD61 /* NewIdeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F72C37180F467B00ADFD61 /* NewIdeaViewController.m */; };
 		31FC076E180F2A0C00274A5C /* ThinkBackSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FC076C180F2A0C00274A5C /* ThinkBackSettingsViewController.m */; };
@@ -86,8 +86,8 @@
 		31C776FC181AEB8800F2C3E8 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		31C7770018205D6800F2C3E8 /* IdeaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IdeaModel.xcdatamodel; sourceTree = "<group>"; };
 		31C7770218224F1300F2C3E8 /* Icon-ThinkBack-Rough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-ThinkBack-Rough.png"; sourceTree = "<group>"; };
-		31D924F1184A9CB200012197 /* ThinkBackDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkBackDataManager.h; sourceTree = "<group>"; };
-		31D924F2184A9CB200012197 /* ThinkBackDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkBackDataManager.m; sourceTree = "<group>"; };
+		31DDF1C31863D689003FD361 /* NSString+TrimLeadingWhitespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TrimLeadingWhitespace.h"; sourceTree = "<group>"; };
+		31DDF1C41863D689003FD361 /* NSString+TrimLeadingWhitespace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TrimLeadingWhitespace.m"; sourceTree = "<group>"; };
 		31F72C31180F460C00ADFD61 /* AllIdeasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllIdeasViewController.h; sourceTree = "<group>"; };
 		31F72C32180F460C00ADFD61 /* AllIdeasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllIdeasViewController.m; sourceTree = "<group>"; };
 		31F72C36180F467B00ADFD61 /* NewIdeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewIdeaViewController.h; sourceTree = "<group>"; };
@@ -234,10 +234,10 @@
 				31D924F4184A9CDA00012197 /* Data Objects */,
 				319303E718283CF4000B5B5D /* CoreDataHelper.h */,
 				319303E818283CF4000B5B5D /* CoreDataHelper.m */,
-				31D924F1184A9CB200012197 /* ThinkBackDataManager.h */,
-				31D924F2184A9CB200012197 /* ThinkBackDataManager.m */,
 				315BB5D818638B9A008967C6 /* NSDate+ThinkBack.h */,
 				315BB5D918638B9A008967C6 /* NSDate+ThinkBack.m */,
+				31DDF1C31863D689003FD361 /* NSString+TrimLeadingWhitespace.h */,
+				31DDF1C41863D689003FD361 /* NSString+TrimLeadingWhitespace.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -371,13 +371,13 @@
 			files = (
 				31C7770118205D6800F2C3E8 /* IdeaModel.xcdatamodeld in Sources */,
 				310CBB1717EFFB2300F8A534 /* ThinkBackRootViewController.m in Sources */,
+				31DDF1C51863D689003FD361 /* NSString+TrimLeadingWhitespace.m in Sources */,
 				31ACA3DF186131E100E29422 /* IdeaTableViewCell.m in Sources */,
 				31F72C34180F460C00ADFD61 /* AllIdeasViewController.m in Sources */,
 				319304391828AD79000B5B5D /* ThinkBackIdeaDataObject.m in Sources */,
 				31F72C38180F467B00ADFD61 /* NewIdeaViewController.m in Sources */,
 				31FC076E180F2A0C00274A5C /* ThinkBackSettingsViewController.m in Sources */,
 				310CBB0E17EFFB2300F8A534 /* ThinkBackAppDelegate.m in Sources */,
-				31D924F3184A9CB200012197 /* ThinkBackDataManager.m in Sources */,
 				319303E918283CF4000B5B5D /* CoreDataHelper.m in Sources */,
 				315BB5DA18638B9A008967C6 /* NSDate+ThinkBack.m in Sources */,
 				310CBB0A17EFFB2300F8A534 /* main.m in Sources */,

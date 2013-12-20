@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThinkBack/CoreDataHelper.m"
-            timestampString = "409167490.840664"
+            timestampString = "409193910.196777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "+createIdea"
             landmarkType = "5">
          </BreakpointContent>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ThinkBack/CoreDataHelper.m"
-            timestampString = "409181534.72161"
+            filePath = "ThinkBack/NewIdeaViewController.m"
+            timestampString = "409196242.78237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "+formattedRemindAtTimeForIdea:"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-updateUiForData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
