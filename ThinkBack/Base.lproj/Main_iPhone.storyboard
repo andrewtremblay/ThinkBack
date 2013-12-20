@@ -28,7 +28,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HVb-ZK-SIW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThinkBack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0o-U0-1XL">
@@ -45,11 +45,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0l-SF-Bwe" userLabel="New Ideas View">
-                                <rect key="frame" x="0.0" y="56" width="320" height="257"/>
+                                <rect key="frame" x="0.0" y="56" width="320" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSV-Lb-3mv">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="265"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="177"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="120" maxX="0.0" maxY="0.0"/>
@@ -63,7 +63,7 @@
                                         </connections>
                                     </button>
                                     <view autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNn-0g-0MV" userLabel="Page View">
-                                        <rect key="frame" x="85" y="65" width="151" height="128"/>
+                                        <rect key="frame" x="85" y="21" width="151" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXC-Mv-bLO">
@@ -100,7 +100,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QT4-A7-mQM" userLabel="All Ideas View">
-                                <rect key="frame" x="0.0" y="321" width="320" height="169"/>
+                                <rect key="frame" x="0.0" y="233" width="320" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omy-Mb-EkN">
@@ -141,7 +141,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpP-84-LtO" userLabel="Settings View">
-                                <rect key="frame" x="0.0" y="482" width="320" height="86"/>
+                                <rect key="frame" x="0.0" y="394" width="320" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j32-i8-G5d">
@@ -215,11 +215,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Usn-BI-9sY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8fm-6F-2JN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OXe-hm-BoT">
-                                <rect key="frame" x="0.0" y="36" width="320" height="532"/>
+                                <rect key="frame" x="0.0" y="36" width="320" height="444"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -240,8 +240,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmp-Oa-SFc">
-                                                    <rect key="frame" x="8" y="8" width="303" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmp-Oa-SFc">
+                                                    <rect key="frame" x="8" y="9" width="303" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Be Don Hertzfeldt">
@@ -379,24 +379,22 @@
                         <viewControllerLayoutGuide type="bottom" id="EID-ju-Uhq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ucP-a7-tJA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" keyboardDismissMode="interactive" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W6N-7R-MH5" userLabel="Idea Text View">
-                                <rect key="frame" x="5" y="52" width="310" height="284"/>
+                                <rect key="frame" x="5" y="52" width="310" height="212"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Boy meets Grill">
+                                    <fragment content=" ">
                                         <attributes>
-                                            <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="rect" keyPath="contentInset">
                                         <rect key="value" x="-20" y="0.0" width="0.0" height="0.0"/>
@@ -407,7 +405,7 @@
                                 </connections>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3I-p4-vpv" userLabel="Base View">
-                                <rect key="frame" x="0.0" y="336" width="320" height="232"/>
+                                <rect key="frame" x="0.0" y="248" width="320" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -416,44 +414,78 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRJ-gc-GMq" userLabel="Reminder Options View">
-                                <rect key="frame" x="0.0" y="336" width="320" height="232"/>
+                                <rect key="frame" x="0.0" y="264" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remind me about this..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qv0-Ca-j2E">
-                                        <rect key="frame" x="20" y="24" width="280" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me about this idea..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qv0-Ca-j2E">
+                                        <rect key="frame" x="20" y="0.0" width="280" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="WVq-Ss-KdG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmG-ob-JuJ">
-                                        <rect key="frame" x="20" y="63" width="280" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rA-1J-HR4">
+                                        <rect key="frame" x="20" y="40" width="280" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="never. Just hold onto it.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rA-1J-HR4">
-                                        <rect key="frame" x="20" y="101" width="280" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="lAA-gK-tsr"/>
+                                            <constraint firstAttribute="height" constant="55" id="tYf-UZ-ko3"/>
+                                        </constraints>
                                         <state key="normal" title="at an Exact Time">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="setRemindDateOptionPressed:" destination="zCt-NU-eTg" eventType="touchUpInside" id="kFx-Nb-doe"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYB-XL-M2C">
-                                        <rect key="frame" x="20" y="139" width="280" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYB-XL-M2C">
+                                        <rect key="frame" x="20" y="95" width="280" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="at a Fuzzy Time">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="setRemindDateOptionPressed:" destination="zCt-NU-eTg" eventType="touchUpInside" id="zJf-VF-cFE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmG-ob-JuJ">
+                                        <rect key="frame" x="20" y="156" width="280" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="v7e-j7-NJj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="14"/>
+                                        <state key="normal" title="never. Just hold onto it.">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setRemindDateOptionPressed:" destination="zCt-NU-eTg" eventType="touchUpInside" id="6sY-U2-Hl4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.94408118206521741" green="0.94408118206521741" blue="0.94408118206521741" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="232" id="Ivg-rv-mKO"/>
+                                    <constraint firstAttribute="trailing" secondItem="pYB-XL-M2C" secondAttribute="trailing" constant="20" id="74w-fG-uvG"/>
+                                    <constraint firstAttribute="centerX" secondItem="9rA-1J-HR4" secondAttribute="centerX" id="Cxp-iX-OPk"/>
+                                    <constraint firstItem="NmG-ob-JuJ" firstAttribute="top" secondItem="pYB-XL-M2C" secondAttribute="bottom" constant="8" id="Eux-VG-4ro"/>
+                                    <constraint firstAttribute="bottom" secondItem="NmG-ob-JuJ" secondAttribute="bottom" id="GDJ-Es-gac"/>
+                                    <constraint firstAttribute="trailing" secondItem="NmG-ob-JuJ" secondAttribute="trailing" constant="20" id="Giz-ux-g2G"/>
+                                    <constraint firstAttribute="height" constant="216" id="Ivg-rv-mKO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qv0-Ca-j2E" secondAttribute="trailing" constant="20" id="Lcw-0J-Jid"/>
+                                    <constraint firstItem="Qv0-Ca-j2E" firstAttribute="leading" secondItem="rRJ-gc-GMq" secondAttribute="leading" constant="20" id="Q0k-ZO-bvD"/>
+                                    <constraint firstAttribute="centerX" secondItem="pYB-XL-M2C" secondAttribute="centerX" id="X44-Ks-3kI"/>
+                                    <constraint firstItem="pYB-XL-M2C" firstAttribute="top" secondItem="9rA-1J-HR4" secondAttribute="bottom" id="XQp-Eb-Otn"/>
+                                    <constraint firstItem="Qv0-Ca-j2E" firstAttribute="top" secondItem="rRJ-gc-GMq" secondAttribute="top" id="qud-Iw-YhB"/>
+                                    <constraint firstItem="pYB-XL-M2C" firstAttribute="leading" secondItem="rRJ-gc-GMq" secondAttribute="leading" constant="20" id="tTe-AY-Pg0"/>
+                                    <constraint firstItem="9rA-1J-HR4" firstAttribute="top" secondItem="rRJ-gc-GMq" secondAttribute="top" constant="40" id="tgy-NK-VTY"/>
+                                    <constraint firstItem="NmG-ob-JuJ" firstAttribute="leading" secondItem="rRJ-gc-GMq" secondAttribute="leading" constant="20" id="zAv-BE-edH"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9tC-3v-h8G">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9tC-3v-h8G" userLabel="Button - Back">
                                 <rect key="frame" x="0.0" y="20" width="70" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -475,7 +507,7 @@
                                     <action selector="backButtonPressed:" destination="zCt-NU-eTg" eventType="touchUpInside" id="aav-U5-BCE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4F-R8-SNJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4F-R8-SNJ" userLabel="Button - Done">
                                 <rect key="frame" x="250" y="20" width="70" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -497,19 +529,31 @@
                                     <action selector="doneButtonPressed:" destination="zCt-NU-eTg" eventType="touchUpInside" id="NT3-3C-lPH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@ 10:34 AM Tomorrow" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odI-td-13U">
-                                <rect key="frame" x="13" y="312" width="295" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bfm-1Y-Z0e" userLabel="Button - Remind At">
+                                <rect key="frame" x="0.0" y="234" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="8Wi-A7-sbP"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="Wrv-yU-lgP"/>
+                                    <constraint firstAttribute="height" constant="30" id="wxs-N9-uhv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="ideaRemindAtBtnPressed:" destination="zCt-NU-eTg" eventType="touchUpInside" id="qk5-8S-82F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Bfm-1Y-Z0e" secondAttribute="centerX" id="0An-vm-33B"/>
                             <constraint firstItem="9tC-3v-h8G" firstAttribute="top" secondItem="ucP-a7-tJA" secondAttribute="top" constant="20" id="1aW-Yu-8Wd"/>
                             <constraint firstAttribute="trailing" secondItem="v3I-p4-vpv" secondAttribute="trailing" id="8Za-fI-nCw"/>
                             <constraint firstItem="9tC-3v-h8G" firstAttribute="leading" secondItem="ucP-a7-tJA" secondAttribute="leading" id="B2g-Qi-C2Y"/>
@@ -517,18 +561,16 @@
                             <constraint firstItem="EID-ju-Uhq" firstAttribute="top" secondItem="rRJ-gc-GMq" secondAttribute="bottom" id="Drl-VE-SHd"/>
                             <constraint firstItem="rRJ-gc-GMq" firstAttribute="leading" secondItem="ucP-a7-tJA" secondAttribute="leading" id="GKB-Wv-kC4"/>
                             <constraint firstItem="W6N-7R-MH5" firstAttribute="leading" secondItem="ucP-a7-tJA" secondAttribute="leading" constant="5" id="Hy1-yH-pnB"/>
-                            <constraint firstItem="odI-td-13U" firstAttribute="leading" secondItem="ucP-a7-tJA" secondAttribute="leading" constant="13" id="Jf4-Ru-ybl"/>
                             <constraint firstItem="W6N-7R-MH5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ucP-a7-tJA" secondAttribute="leading" constant="5" id="KTc-fX-nnM"/>
-                            <constraint firstItem="odI-td-13U" firstAttribute="bottom" secondItem="W6N-7R-MH5" secondAttribute="bottom" id="M1u-Rs-15I"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="odI-td-13U" secondAttribute="trailing" constant="12" id="NFe-ZE-qGN"/>
                             <constraint firstAttribute="trailing" secondItem="rRJ-gc-GMq" secondAttribute="trailing" id="OFi-fE-kbc"/>
-                            <constraint firstItem="odI-td-13U" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ucP-a7-tJA" secondAttribute="leading" constant="13" id="PRM-kY-KIx"/>
-                            <constraint firstAttribute="trailing" secondItem="odI-td-13U" secondAttribute="trailing" constant="12" id="VYM-96-EzY"/>
                             <constraint firstAttribute="trailing" secondItem="x4F-R8-SNJ" secondAttribute="trailing" id="YCC-yT-rkw"/>
                             <constraint firstItem="9tC-3v-h8G" firstAttribute="leading" secondItem="ucP-a7-tJA" secondAttribute="leading" id="ZI9-XG-v8g"/>
                             <constraint firstItem="EID-ju-Uhq" firstAttribute="top" secondItem="v3I-p4-vpv" secondAttribute="bottom" id="bPA-cu-YFP"/>
                             <constraint firstItem="9tC-3v-h8G" firstAttribute="top" secondItem="ucP-a7-tJA" secondAttribute="top" constant="20" id="dfH-VF-3F6"/>
                             <constraint firstItem="W6N-7R-MH5" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ucP-a7-tJA" secondAttribute="leading" constant="5" id="ftW-98-ah0"/>
+                            <constraint firstAttribute="trailing" secondItem="Bfm-1Y-Z0e" secondAttribute="trailing" id="lIp-dA-NgZ"/>
+                            <constraint firstItem="Bfm-1Y-Z0e" firstAttribute="leading" secondItem="ucP-a7-tJA" secondAttribute="leading" id="lOD-LG-BLI"/>
+                            <constraint firstItem="rRJ-gc-GMq" firstAttribute="top" secondItem="Bfm-1Y-Z0e" secondAttribute="bottom" id="mdd-Ww-QAM"/>
                             <constraint firstAttribute="trailing" secondItem="W6N-7R-MH5" secondAttribute="trailing" constant="5" id="sMt-Uq-uGS"/>
                             <constraint firstItem="v3I-p4-vpv" firstAttribute="leading" secondItem="ucP-a7-tJA" secondAttribute="leading" id="tmI-3a-YDA"/>
                             <constraint firstItem="W6N-7R-MH5" firstAttribute="top" secondItem="x4F-R8-SNJ" secondAttribute="bottom" constant="-15" id="u7g-OC-FNU"/>
@@ -540,8 +582,11 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="baseView" destination="v3I-p4-vpv" id="tok-Ze-6Tf"/>
-                        <outlet property="ideaRemindAtTextView" destination="odI-td-13U" id="W7R-2c-ow0"/>
+                        <outlet property="ideaRemindAtBtn" destination="Bfm-1Y-Z0e" id="Y9u-GQ-Feb"/>
                         <outlet property="ideaTextView" destination="W6N-7R-MH5" id="tjo-Jq-ZYb"/>
+                        <outlet property="remindAtOptionExactTime" destination="9rA-1J-HR4" id="oRq-VN-NnO"/>
+                        <outlet property="remindAtOptionFuzzyTime" destination="pYB-XL-M2C" id="eoO-O2-VcR"/>
+                        <outlet property="remindAtOptionNever" destination="NmG-ob-JuJ" id="7L3-fK-orE"/>
                         <outlet property="remindAtWrapperView" destination="rRJ-gc-GMq" id="ohy-jq-4LU"/>
                         <outlet property="view" destination="ucP-a7-tJA" id="E6f-M5-VU2"/>
                     </connections>
@@ -559,7 +604,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bZv-FK-IB9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AVj-tz-8UN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00H-3Y-Hla">
@@ -613,6 +658,35 @@
                                     <action selector="backButtonPressed:" destination="vfz-Wt-uZk" eventType="touchUpInside" id="eap-cP-TGF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-nZ-0Wd">
+                                <rect key="frame" x="250" y="13" width="70" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="&lt;">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Save">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <state key="disabled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Save">
+                                            <attributes>
+                                                <color key="NSColor" red="0.50108271059999998" green="0.50108271059999998" blue="0.50108271059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="vfz-Wt-uZk" eventType="touchUpInside" id="MzM-MO-wz8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -634,7 +708,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Pzj-BU-Vzc"/>
