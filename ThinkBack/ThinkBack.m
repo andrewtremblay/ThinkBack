@@ -165,8 +165,8 @@
     
     if((remindType & ThinkBackRemindTypeTimeExact)){
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateStyle:NSDateFormatterFullStyle];
-        [dateFormatter setTimeStyle:NSDateFormatterFullStyle];
+        [dateFormatter setDateStyle:NSDateFormatterNoStyle];
+        [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
         
         NSDate *dateCheck = object.remindAt;
         if([dateCheck isToday]){
@@ -178,10 +178,12 @@
         }else if(dateCheck == [NSDate never]){
             toRet = @"Never";
         }else {
-            [dateFormatter setDateFormat:@"dd/mm/yy 'at' h:mm aa"];
+            [dateFormatter setDateFormat:@"M/d/yy 'at' h:mm aa"];
         }
         NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
         [dateFormatter setLocale:usLocale];
+        
+        
         toRet = [dateFormatter stringFromDate:object.remindAt];
     }else if ((remindType & ThinkBackRemindTypeTimeFuzzy)){
         toRet = @"Whenever";
